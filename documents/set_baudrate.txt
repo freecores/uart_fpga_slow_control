@@ -7,6 +7,11 @@ line 359 of the ab_uart_lbus_slave.vhd
 
 v_data_init         <= "00000010";   -- DEC 2 Baudrate = 921600 bps @ 29,4912 MHz 
 
+other popular baudrates:
+
+v_data_init         <= "00000100";   -- DEC 4 Baudrate = 230400 bps @ 29,4912 MHz 
+v_data_init         <= "00001000";   -- DEC 8 Baudrate = 115200 bps @ 29,4912 MHz 
+....
 
 
 
