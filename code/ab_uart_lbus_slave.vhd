@@ -356,7 +356,7 @@ begin
         when WRITE_DIVLTC =>            -- init WRITE_DIVLTC
           if s_write_msb = '0' then
             v_add_init          <= O"0";         -- init Divisor Latch lsb
-            v_data_init         <= "00000010";--"00001111";   -- DEC 15 Baudrate = 230400 bps @ 55,296 MHz 
+            v_data_init         <= "00000010";   -- DEC 2 Baudrate = 921600 bps @ 29,4912 MHz 
             s_write_msb         <= '1';
             s_slave_init        <= WRITE_DIVLTC;
           else
