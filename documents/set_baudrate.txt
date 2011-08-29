@@ -1,0 +1,12 @@
+How to set the baud rate:
+
+the code comes preprogrammed at 921600 bps (1 Mbps)
+
+to change the speed edit the content of the WRITE_DIVLTC register
+line 359 of the ab_uart_lbus_slave.vhd
+
+v_data_init         <= "00000010";   -- DEC 2 Baudrate = 921600 bps @ 29,4912 MHz 
+
+
+
+
