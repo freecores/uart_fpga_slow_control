@@ -7,7 +7,7 @@
 --
 -- unit name: register_rx_handler
 --
--- author: Mauro Predonzani (mauro.predonzani@elettra.trieste.it)
+-- author: Mauro Predonzani (predmauro@libero.it)
 --         Andrea Borga     (andrea.borga@nikhef.nl)
 --
 -- date: 20/02/2009    $: created

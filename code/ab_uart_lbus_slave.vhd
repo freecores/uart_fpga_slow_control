@@ -8,7 +8,7 @@
 -- unit name: uart_lbus (UART Control)
 --
 -- author: 	Andrea Borga (andrea.borga@nikhef.nl)
---		Mauro Predonzani (mauro.predonzani@elettra.trieste.it)
+--		Mauro Predonzani (predmauro@libero.it)
 --
 -- date: $26/01/2009    $: created
 --

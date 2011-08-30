@@ -7,7 +7,7 @@
 --
 -- unit name: register_tx_handler
 --
--- author: Mauro Predonzani (mauro.predonzani@elettra.trieste.it)
+-- author: Mauro Predonzani (predmauro@libero.it)
 --
 -- date: 20/02/2009    $: created
 --

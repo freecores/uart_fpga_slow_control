@@ -8,7 +8,7 @@
 -- unit name: UART_16550_wrapper
 --
 -- author: 	Andrea Borga (andrea.borga@nikhef.it)
---	        Mauro Predonzani (mauro.predonzani@elettra.trieste.it)
+--	        Mauro Predonzani (predmauro@libero.it)
 --
 -- date: $26/01/2009    $: created
 --
