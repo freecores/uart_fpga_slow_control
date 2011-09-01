@@ -57,6 +57,8 @@ use ieee.std_logic_unsigned.all;
 entity ab_top is
    port(
      clk_uart_29MHz_i   : in     std_logic;
+     uart_rst_i         : in     std_logic;
+     uart_leds_o        : out    std_logic_vector(7 downto 0);
      clk_uart_monitor_o : out    std_logic;
      -- #####################
      -- ADD your registers toward the rest of the logic here
