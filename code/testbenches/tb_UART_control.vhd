@@ -99,6 +99,9 @@ ARCHITECTURE behavior OF tb_ab_top IS
 			X"40", -- BYTE4
 			X"80", -- BYTE5
 			X"20", -- BYTE6
+                        -- ##############
+                        -- add other data
+                        -- ##############
 		-- 7th data	
 			X"80", -- BYTE1
 			X"00", -- BYTE2
@@ -106,7 +109,6 @@ ARCHITECTURE behavior OF tb_ab_top IS
 			X"00", -- BYTE4
 			X"00", -- BYTE5
 			X"00"  -- BYTE6
-			-- add other data
 		);
 	 
 BEGIN
