@@ -61,8 +61,8 @@ entity ab_top is
      -- #####################
      -- ADD your registers toward the rest of the logic here
      -- #####################
-     uart_din_o         : out    std_logic;
-     uart_dout_i        : in     std_logic);
+     uart_dout_o        : out    std_logic;
+     uart_din_i         : in     std_logic);
 
 end ab_top;
 
