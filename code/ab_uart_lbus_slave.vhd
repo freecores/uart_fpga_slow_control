@@ -17,7 +17,7 @@
 -- description: <file content, behaviour, purpose, special usage notes...>
 -- <further description>
 --
--- dependencies:	Lantronix_wrapper
+-- dependencies:	uart_wrapper
 --								gh_uart_16550
 --								register_rx_handler
 --								register_tx_handler

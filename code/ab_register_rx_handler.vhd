@@ -32,7 +32,7 @@
 --      data word lenght: 32 bits
 --
 --
--- dependencies:	Lantronix_wrapper
+-- dependencies:	uart_wrapper
 --								uart_lbus_slave
 --								gh_uart_16550
 --

@@ -55,13 +55,13 @@ entity gh_uart_16550 is
 		ADD     : in std_logic_vector(2 downto 0);      -- Address bus
 		D       : in std_logic_vector(7 downto 0);      -- Input DATA BUS
 		
-		sRX	: in std_logic;                         -- Lantronix's OUTPUT
+		sRX	: in std_logic;                         -- uart's INPUT
 		CTSn    : in std_logic := '1';
 		DSRn    : in std_logic := '1';
 		RIn     : in std_logic := '1';
 		DCDn    : in std_logic := '1';
 		
-		sTX     : out std_logic;                        -- Lantronix's INPUT
+		sTX     : out std_logic;                        -- uart's OUTPUT
 		DTRn    : out std_logic;  -- not used
 		RTSn    : out std_logic;  -- not used
 		OUT1n   : out std_logic;  -- not used

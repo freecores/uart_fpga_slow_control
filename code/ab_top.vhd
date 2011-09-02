@@ -75,16 +75,15 @@ architecture a0 of ab_top is
   
   component uart_16550_wrapper
     port(
-    -- general purpose
-	sys_clk_i	        : in std_logic;		-- system clock
+    -- general purpose 
+	sys_clk_i	        : in std_logic;		-- system clock 
         sys_rst_i               : in std_logic;  	-- system reset
 	-- TX/RX process command line
 	echo_en_i		: in std_logic;		-- Echo enable (byte by byte) enable/disable = 1/0
 	tx_addr_wwo_i	        : in std_logic;		-- control of TX process With or WithOut address W/WO=(1/0)
 	-- serial I/O side
-        lantronix_output_i      : in std_logic; 	-- Lantronix Serial data OUTPUT signal
-	lantronix_input_o       : out std_logic;  	-- Lantronix Serial data INPUT signal
-        cp_b                    : inout std_logic_vector(2 downto 0);  -- general purpose IO pins
+        uart_din_i              : in std_logic; 	-- Serial data INPUT signal (from the FPGA)
+	uart_dout_o             : out std_logic;  	-- Serial data OUTPUT signal (to the FPGA)
         -- parallel I/O side
 	s_br_clk_uart_o         : out std_logic;  	-- br_clk clock probe signal
 	-- RX part/control
@@ -110,7 +109,6 @@ architecture a0 of ab_top is
   signal s_clk_uart		: std_logic; -- slow (29 MHz) clock
   
   -- uart control signals
-  signal s_uart_cp		          	: std_logic_vector (2 downto 0); -- unused
   signal s_uart_br_clk   			: std_logic; -- unused clock monitor
   signal s_uart_rx_add          	: std_logic_vector (15 downto 0);
   signal s_uart_rx_data          	: std_logic_vector (31 downto 0);
@@ -286,9 +284,8 @@ begin
       sys_rst_i               => s_rst,
       echo_en_i		      => r_config_addr_uart(0), 
       tx_addr_wwo_i	      => r_config_addr_uart(1), 
-      lantronix_output_i      => uart_dout_i,
-      lantronix_input_o       => uart_din_o, 
-      cp_b                    => s_uart_cp,
+      uart_dout_i             => uart_dout_i,
+      uart_din_o              => uart_din_o, 
       s_br_clk_uart_o         => s_uart_br_clk,
       v_rx_add_o	      => s_uart_rx_add,          
       v_rx_data_o	      => s_uart_rx_data,               

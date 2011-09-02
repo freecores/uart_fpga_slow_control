@@ -75,9 +75,8 @@ entity uart_16550_wrapper is
   echo_en_i          : in std_logic;  -- Echo enable (byte by byte) enable/disable = 1/0
   tx_addr_wwo_i	     : in std_logic;  -- control of TX process With or WithOut address W/WO=(1/0)
   -- serial I/O side
-  lantronix_output_i : in std_logic; 			-- Lantronix Serial data OUTPUT signal
-  lantronix_input_o  : out std_logic;  		-- Lantronix Serial data INPUT signal
-  cp_b               : inout std_logic_vector(2 downto 0);  -- general purpose IO pins
+  uart_din_i              : in std_logic; 	-- Serial data INPUT signal (from the FPGA)
+  uart_dout_o             : out std_logic;  	-- Serial data OUTPUT signal (to the FPGA)
   -- parallel I/O side
   s_br_clk_uart_o    : out std_logic;  		-- br_clk clock probe signal
   -- RX part/control
@@ -115,13 +114,13 @@ architecture a of uart_16550_wrapper is
       ADD     : in std_logic_vector(2 downto 0); -- ADDRESS BUS
       D       : in std_logic_vector(7 downto 0); -- Input DATA BUS and CONTROL BUS
       
-      sRX     : in std_logic; -- Lantronix's OUTPUT
+      sRX     : in std_logic; -- uart's INPUT
       CTSn    : in std_logic := '1';
       DSRn    : in std_logic := '1';
       RIn     : in std_logic := '1';
       DCDn    : in std_logic := '1';
       
-      sTX     : out std_logic; -- Lantronix's INPUT
+      sTX     : out std_logic; -- uart's OUTPUT
       DTRn    : out std_logic;
       RTSn    : out std_logic;
       OUT1n   : out std_logic;
@@ -341,8 +340,8 @@ architecture a of uart_16550_wrapper is
 	
 begin
 
-  s_clk                 <= sys_clk_i;    -- 14,xxx MHz main clock single ended buffer and division by one
-  	  		-- and 1 Mbit/s with Lantronix
+  s_clk                 <= sys_clk_i;    -- 29,xxx MHz main clock single ended buffer
+
   s_clk_n               <=  not s_clk;
   s_rst                 <= sys_rst_i;
   s_br_clk              <= s_clk;               
@@ -492,13 +491,13 @@ begin
       WR        => s_wr, -- WRITE when HIGH with CS high | READ when LOW with CS high
       ADD       => uart_add_bus,	-- ADDRESS BUS
       D         => uart_data_bus,	-- Input DATA BUS and CONTROL BUS
-      sRX       => lantronix_output_i, 		 -- Lantronix's OUTPUT
+      sRX       => uart_din_i, 		 -- uart' INPUT
       CTSn      => '1',                    -- not used 
       DSRn      => '1',                    -- not used
       RIn       => '1',                    -- not used
       DCDn      => '1',                    -- not used
       
-      sTX       => lantronix_input_o, 		 -- Lantronix's INPUT
+      sTX       => uart_dout_o, 		 -- uart's OUTPUT
       DTRn      => open,                   -- not used 
       RTSn      => open,                   -- not used 
       OUT1n     => open,                   -- not used 
