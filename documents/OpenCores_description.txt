@@ -22,8 +22,9 @@ Almost no documentation is required.
 no knowledge of the internals of the core required.
 The top entity is self-explanatory.
 
-Use RealTerm to simply send and receive HEX commands ( http://realterm.sourceforge.net/ ).
-TCP/IP to UART bridging is just around the corner.
+Remotely control the logic from a PC:
+~ Under Windows use RealTerm to simply send and receive HEX commands ( http://realterm.sourceforge.net/ ).
+~ TCP/IP to UART bridging is just around the corner using inexpensive external devices.
 
 crossplatform compatible (tested on Xilinx Virtex-5 and Altera Stratix-4 devices). Tested up to 1 Mbps with a 29.4912 MHz oscillator.
 
