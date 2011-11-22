@@ -24,10 +24,12 @@ The top entity is self-explanatory.
 
 Remotely control the logic from a PC:
 ~ Under Windows use RealTerm to simply send and receive HEX commands ( http://realterm.sourceforge.net/ ).
+~ Simple Python script to drive the uart via command line in linux (see software details tab above).
 ~ TCP/IP to UART bridging is just around the corner using inexpensive external devices.
+
 
 crossplatform compatible (tested on Xilinx Virtex-5 and Altera Stratix-4 devices). Tested up to 1 Mbps with a 29.4912 MHz oscillator.
 
+
 ## Feeback:
 Give comments and feedback using the official core thread on the OpenCores forum:
-http://opencores.org/forum,Cores,0,4443
