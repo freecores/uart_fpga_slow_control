@@ -15,13 +15,17 @@ in the software folder of the project archive you will find:
 ++ py_serial_control.py :
  \ custom very simple script to read and write the UART with Python (http://www.python.org/doc)
  \ uses the pySerial library (http://pyserial.sourceforge.net/)
- \ parses human readable parameters and translates them into the correct hex commands
-   > e.g: >> update --> 0x8000 0x00000000
- \ include a basic 'help' menu
- \ define your commands
- \ DEFINE the number of registers to expect back after an update
+   > parses human readable parameters and translates them into the correct hex commands
+     e.g: >> update --> 0x8000 0x00000000
+     include a basic 'help' menu
+ \ Customize your script 
+   > define your commands
+   > DEFINE the number of registers to expect back after an update
+ \ Browse to you script folder
+   > from a shell type: python py_serial_control.py
+   > enjoy ! :)   
  \ to be implemented:
-   > load parameters and commands from files
+   > load parameters and commands from files 
    > improve readback print on screen formatting
    > make a generic nregister readout 
    
